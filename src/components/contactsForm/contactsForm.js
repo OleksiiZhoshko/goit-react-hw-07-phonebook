@@ -1,14 +1,14 @@
 import React from 'react';
-import css from './PhoneBook.module.css';
+import css from './contactsForm.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContacts } from 'Redux/contactSlise';
 import { nanoid } from 'nanoid';
-import { getContacts } from 'Redux/selector';
+import { selectContacts } from 'Redux/selector';
+import { addContacts } from 'Redux/operations';
 
 const PhoneBook = () => {
   const dispatch = useDispatch();
 
-  const contactsValue = useSelector(getContacts);
+  const contactsValue = useSelector(selectContacts);
 
   const hendleCenge = event => {
     event.preventDefault();

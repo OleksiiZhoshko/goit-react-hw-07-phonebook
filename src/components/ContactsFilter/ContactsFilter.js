@@ -1,14 +1,13 @@
-import css from "./ContactsFilter.module.css";
+import css from "./contactsFilter.module.css";
 import { setFilterValue } from "Redux/filterSlise";
 import { useDispatch, useSelector } from "react-redux";
-import { getFilter } from "Redux/selector";
 
-export const Filter = () => {
+const Filter = () => {
   const dispatch = useDispatch()
-  const value = useSelector(getFilter)
+  const filter = useSelector(state => state.filter);
   return(<label className={css.filter} htmlFor="">
     Find contacts by name:
-    <input className={css.filter__input} type="text" value={value} onChange={(e) => {
+    <input className={css.filter__input} type="text" value={filter} onChange={(e) => {
       dispatch(setFilterValue(e.target.value))
     }} />
   </label>
