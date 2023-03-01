@@ -3,7 +3,6 @@ import {
   fetchContacts,
   addContacts,
   deleteContact,
-  editContact,
 } from './operations';
 
 const contactsInitialState = {
@@ -12,7 +11,7 @@ const contactsInitialState = {
   error: null,
 };
 
-const extraActions = [fetchContacts, addContacts, deleteContact, editContact];
+const extraActions = [fetchContacts, addContacts, deleteContact];
 const getActions = type => extraActions.map(action => action[type]);
 
 const contactsSlice = createSlice({
@@ -30,16 +29,6 @@ const contactsSlice = createSlice({
         state.items = state.items.filter(
           contact => contact.id !== action.payload.id
         );
-      })
-      .addCase(editContact.fulfilled, (state, action) => {
-        const i = state.items.findIndex(
-          contact => contact.id === action.payload.id
-        );
-        state.items.splice(i, 1, {
-          ...state.items[i],
-          name: action.payload.name,
-          number: action.payload.number,
-        });
       })
       .addMatcher(isAnyOf(...getActions('pending')), state => {
         state.isLoading = true;

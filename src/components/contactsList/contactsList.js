@@ -12,7 +12,7 @@ const Contacts = () => {
       <ul className={css.box}>
         {contacts.map(({ id, name, number }) => (
           <li className={css.list} key={id}>
-            <p>{name}</p>
+            <p>{name}:</p>
             <p>{number}</p>
             <button
               className={css.button}

@@ -3,7 +3,7 @@ import css from './contactsForm.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from 'nanoid';
 import { selectContacts } from 'Redux/selector';
-import { addContacts } from 'Redux/operations';
+import { addContacts} from 'Redux/operations';
 
 const PhoneBook = () => {
   const dispatch = useDispatch();
