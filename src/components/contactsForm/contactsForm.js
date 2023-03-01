@@ -13,14 +13,14 @@ const PhoneBook = () => {
   const hendleCenge = event => {
     event.preventDefault();
     const { name, number } = event.target.elements;
-    const contacts = { id: nanoid(6), name: name.value, number: number.value };
+    // const contacts = { id: nanoid(6), name: name.value, number: number.value };
     if (contactsValue.some(contact => contact.name === name.value)) {
       alert(`Sorry, ${name.value} is already in contacts.`);
       name.value = '';
       number.value = '';
       return;
     }
-    dispatch(addContacts(contacts));
+    dispatch(addContacts({id: nanoid(6), name: name.value, number: number.value}));
     name.value = '';
     number.value = '';
   };
