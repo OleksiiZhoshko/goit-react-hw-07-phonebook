@@ -1,6 +1,6 @@
 import PhoneBook from './contactsForm/contactsForm';
 import Comtacts from './contactsList/contactsList';
-import Filter from './ContactsFilter/contactsFilter';
+import Filter from './сontactsFilter/contactsFilter';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from 'Redux/operations';
